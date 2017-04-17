@@ -80,14 +80,21 @@ class Petitions
       # no petitions, nothing to do here
       nil
     else
+
+      return nil unless tds.length > 2 && tds[2] && tds[3]
+
       ref_name = tds[0].text
       ref_num = ref_name.split('-')[0].to_i
+      subject = tds[1].text
+      sigs = tds[2].text.to_i
+      closed = tds[3].text
+
       {
-          reference_name: ref_name,
-          reference_num: ref_num,
-          subject: tds[1].text,
-          signatures: tds[2].text.to_i,
-          closed_at: tds[3].text + ' 00:00:00 +10:00'
+        reference_name: ref_name,
+        reference_num: ref_num,
+        subject: subject,
+        signatures: sigs,
+        closed_at: closed + ' 00:00:00 +10:00'
       }
     end
   end
