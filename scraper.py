@@ -10,9 +10,9 @@ import requests
 from lxml import html
 
 
-class BrisbaneCityCouncilPetitions:
+class QldGovtPetitions:
     """
-    Gather the details of the petitions on the Brisbane City Council website.
+    Gather the details of the petitions.
     """
 
     petition_list = 'https://www.parliament.qld.gov.au/work-of-assembly/petitions/current-epetitions'
@@ -270,5 +270,5 @@ class BrisbaneCityCouncilPetitions:
             return f.read()
 
 
-petitions = BrisbaneCityCouncilPetitions()
+petitions = QldGovtPetitions()
 petitions.run()
