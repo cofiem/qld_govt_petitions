@@ -28,7 +28,7 @@ class QldGovtPetitions:
 
     cache_chars = string.digits + string.ascii_letters
     local_cache_dir = 'cache'
-    use_cache = False
+    use_cache = True
 
     def run(self):
         current_time = datetime.today()
